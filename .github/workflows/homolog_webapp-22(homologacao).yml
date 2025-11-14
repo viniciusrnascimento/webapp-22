@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - webapp-22
 on:
   push:
     branches:
-      - main
+      - homolog
   workflow_dispatch:
 
 jobs:
@@ -63,9 +63,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A38F9D43F72741659A7E8A15A16E15EC }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D89F09A99E1343E8A6BF2D7E743BDD2F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_719474466CFB4BF4AC44624FDD4B7B14 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EA826D559DE8433C9257678BA35A5CE3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_28017754A66C4055A9F5F424FB5B3BC0 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3B9648ADD4124111A159485B04EF551B }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -73,5 +73,4 @@ jobs:
         with:
           app-name: 'webapp-22'
           slot-name: 'homologacao'
-
           
