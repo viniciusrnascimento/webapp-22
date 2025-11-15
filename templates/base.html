@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or "Meu App Flask" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Meu Site</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a> |
+      <a href="{{ url_for('about') }}">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- aqui é onde as páginas filhas injetam o conteúdo -->
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>Rodapé &copy; {{ 2025 }}</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
